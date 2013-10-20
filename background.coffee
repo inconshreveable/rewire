@@ -88,7 +88,7 @@ class RewiredPatterns
         parts = parseUri(url)
         chrome.notifications.create("",
             type: "basic"
-            iconUrl: "chrome-extension://" + chrome.runtime.id + "/icon.png"
+            iconUrl: "chrome-extension://" + chrome.runtime.id + "/rewire16.png"
             title: "Unwired"
             message: "You have 10 minutes on " + parts.host
         , () ->

@@ -17,8 +17,17 @@ Click on the rewire icon in your browser's toolbar to access the options page. T
 
 #### How do I install Rewire?
 Rewire is currently being alpha-tested. To try it out you'll need to manually load it into your browser.
+
 1. Clone the code
+
     git clone https://github.com/inconshreveable/rewire.git
+
+1. Use npm to install CoffeeScript
+
+    npm install coffee-script
+
+1. Compile the extension
+    node_modules/coffee-script/bin/coffee -c *.coffee
 
 1. Follow the instructions here [](http://developer.chrome.com/extensions/getstarted.html#unpacked). The short version is:
 - In Chrome, navigate to [](chrome://extensions)
