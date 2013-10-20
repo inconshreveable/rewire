@@ -1,0 +1,27 @@
+Release blockers:
+UI for custom duration for a filter
+Time allowed displayed in notication must be dynamic
+oauth for facebook.com needs to continue to work
+Make ui pretty
+
+Make Icons:
+  19: browser bar item
+  38: larger browser bar
+  16: context menu
+  48: extension list
+  128: ?
+
+should 16x16 icon be different for "unwire"?
+
+HIGH:
+urls displayed in notification message are wrong if you click on a link that redirects you
+context menu helper unwiring fails on URL-shortened links
+add functionality to challenge on unsuspend again
+update context menu item to show only when the link is one that is blocked
+deal with requests that aren't main_frame
+
+LOW:
+don't use regexs for URL patterns?
+track statistics on time spent on each site (not in incognito mode) and # of unwires
+Make it harder to remove an entry from the deny list (passphrase? time-based?)
+disallow copying/pasting if challenge restored

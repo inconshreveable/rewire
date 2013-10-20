@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <script type="text/javascript" src="vendor/angular.js"></script>
+        <script type="text/javascript" src="options.js"></script>
+		<link rel="stylesheet" href="vendor/bootstrap.min.css" type="text/css" />
+    </head>
+    <body>
+        <div ng-app="rewire" ng-controller="Options" class="container" style="width: 757px;">
+            <div class="row-fluid">
+                <div class="span8">
+                    <h4>I want to rewire URLs that match these patterns</h4>
+                    <ul style="width: 250px;">
+                        <li ng-repeat="p in patterns">
+                            {{p.source}}
+                            <button ng-click="del_pattern(p.id)" type="button" class="close" data-dismiss="alert">&times;</button>
+                        </li>
+                    </ul>
+                    <div class="alert" ng-show="bad_pattern">{{rewire_pattern}} is not a valid a regular expression</div>
+                    <form ng-submit="add_pattern()" class="form-inline">
+                        <input ng-change="validate_pattern()" ng-model="rewire_pattern" type="text" class="span4" />
+                        <button type="submit" class="btn btn-primary">Rewire it</button>
+                    </form>
+                </div>
+                <div class="span4">
+                    <h6>How do I access a site that I've rewired?</h6>
+                    <p class="muted">In the address bar (omnibox) type <strong>unwire example.com</strong></p>
+                    <h6>How can I click a link that's rewired?</h6>
+                    <p class="muted"><strong>Right-click the link</strong> (or command click) to open the context menu. Click <strong>Unwire this URL</strong>.</p>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="row-fluid">
+                <div class="span8">
+                    <h4>&hellip; to these sites where I am productive</h4>
+                    <ol>
+                        <li ng-repeat="d in destinations track by $index">
+                            <input ng-model="d" ng-change="setDestination($index, d)" type="text" class="input-xlarge" />
+                        </li>
+                    </ol>
+                </div>
+                <div class="span4">
+                    <h6>Can I rewire to more than three sites?</h6>
+                    <p class="muted"><strong>No.</strong> Rewire works best when you focus on building a small number of skills at a time. I suggest you only rewire to a single site.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
